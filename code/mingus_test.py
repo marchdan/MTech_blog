@@ -54,31 +54,25 @@ def writemusic(nts, time, key):
 
 
 if __name__ == "__main__":
-	choice = int(input("Transpose(0) or Write(1)? "))
-	if choice == 0:
-		n = raw_input("Note name: ")
-		n = transform(n)
-		t = int(raw_input("Number of half-steps to transpose: "))
-		print transpose(n, t)
-	else:
-		NoteL = []
-		key = raw_input("Key(major): ")
-		key = transform(key)
-		num = int(input("Number of notes: "))
-		for i in range(num):
-			get= raw_input("Note(NAME OCTAVE): ").split()
-			if (len(get) == 1):
-				get.append("4")
-			get[0] = transform(get[0])
-			n = get[0] + '-' + get[1]
-			NoteL.append(n)
-		time = int(input("Beats per measure(#/4): "))
-		writemusic(NoteL, time, key)
-"""
-from music21 import *
-##matplotlib, numpy, scipy;
-                
-
-
-converter.parse("tinynotation: 3/4 c4 d8 f g16 a g f#").show()
-"""
+	choice = int(input("Transpose(0) or Write(1)? (-1 to exit) "))
+	while(choice >= 0):
+		if choice == 0:
+			n = raw_input("Note name: ")
+			n = transform(n)
+			t = int(raw_input("Number of half-steps to transpose: "))
+			print transpose(n, t)
+		else:
+			NoteL = []
+			key = raw_input("Key(major): ")
+			key = transform(key)
+			num = int(input("Number of notes: "))
+			for i in range(num):
+				get= raw_input("Note(NAME OCTAVE): ").split()
+				if (len(get) == 1):
+					get.append("4")
+				get[0] = transform(get[0])
+				n = get[0] + '-' + get[1]
+				NoteL.append(n)
+			time = int(input("Beats per measure(#/4): "))
+			writemusic(NoteL, time, key)
+		choice = int(input("Transpose(0) or Write(1)? (-1 to exit) "))
