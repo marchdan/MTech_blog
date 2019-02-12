@@ -79,6 +79,7 @@ if __name__ == "__main__":
 					NoteL.append(n)
 				time = int(file.readline().strip())
 				writemusic(NoteL, time, key, file.readline().strip())
+				close(file)
 			else:
 				NoteL = []
 				key = raw_input("Key (Case sensitive): ")

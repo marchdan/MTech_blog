@@ -1,0 +1,16 @@
+g
+12
+G 3
+A 3
+Bb 3
+A 3
+Bb 3
+C 4
+Bb 3
+C 4
+D 4
+C 4
+D 4
+Eb 4
+3
+output2
