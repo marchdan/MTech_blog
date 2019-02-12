@@ -45,13 +45,9 @@ def writemusic(nts, time, key, file):
 			t + b 
 			b = get_bar(time, key)
 		bt += 1
-
 	test = lilypond.from_Track(t)
 	lilypond.to_pdf(test, file)
-
-
-	
-
+	return t
 
 if __name__ == "__main__":
 	choice = int(input("Transpose(0) or Write(1)? (-1 to exit) "))
@@ -78,8 +74,8 @@ if __name__ == "__main__":
 					n = get[0] + '-' + get[1]
 					NoteL.append(n)
 				time = int(file.readline().strip())
-				writemusic(NoteL, time, key, file.readline().strip())
-				close(file)
+				t = writemusic(NoteL, time, key, file.readline().strip())
+				file.close()
 			else:
 				NoteL = []
 				key = raw_input("Key (Case sensitive): ")
@@ -93,5 +89,12 @@ if __name__ == "__main__":
 					n = get[0] + '-' + get[1]
 					NoteL.append(n)
 				time = int(input("Beats per measure(#/4): "))
-				writemusic(NoteL, time, key,raw_input("File Title: "))
+				t = writemusic(NoteL, time, key,raw_input("File Title: "))
+		c = Composition()
+		c.add_track(t)
+		c.set_author("Daniel Ackermans", "ackerd2@rpi.edu")
+		c.set_title("Composition")
+		tet = lilypond.from_Composition(c)
+		lilypond.to_pdf(tet, "yay")
+		print tet
 		choice = int(input("Transpose(0) or Write(1)? (-1 to exit) "))
