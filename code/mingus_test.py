@@ -35,7 +35,7 @@ def get_bar(time, key):
 	b = Bar(key, (time, 4))
 	return b
 
-def writemusic(nts, time, key):
+def writemusic(nts, time, key, file):
 	t = Track()
 	bt = 0
 	b = get_bar(time, key)
@@ -47,7 +47,7 @@ def writemusic(nts, time, key):
 		bt += 1
 
 	test = lilypond.from_Track(t)
-	lilypond.to_pdf(test, "composition")
+	lilypond.to_pdf(test, file)
 
 
 	
@@ -61,18 +61,36 @@ if __name__ == "__main__":
 			n = transform(n)
 			t = int(raw_input("Number of half-steps to transpose: "))
 			print transpose(n, t)
-		else:
-			NoteL = []
-			key = raw_input("Key(major): ")
-			key = transform(key)
-			num = int(input("Number of notes: "))
-			for i in range(num):
-				get= raw_input("Note(NAME OCTAVE): ").split()
-				if (len(get) == 1):
-					get.append("4")
-				get[0] = transform(get[0])
-				n = get[0] + '-' + get[1]
-				NoteL.append(n)
-			time = int(input("Beats per measure(#/4): "))
-			writemusic(NoteL, time, key)
+		elif choice == 1:
+			fq = raw_input("File?(y/n): ")
+			if fq == 'y':
+				fname = raw_input("File name: ")
+				file = open(fname, "r")
+				NoteL = []
+				key = file.readline().strip()
+				transform(key)
+				num = int(file.readline().strip())
+				for i in range(num):
+					get= file.readline().strip().split()
+					if (len(get) == 1):
+						get.append("4")
+					get[0] = transform(get[0])
+					n = get[0] + '-' + get[1]
+					NoteL.append(n)
+				time = int(file.readline().strip())
+				writemusic(NoteL, time, key, file.readline().strip())
+			else:
+				NoteL = []
+				key = raw_input("Key (Case sensitive): ")
+				transform(key)
+				num = int(input("Number of notes: "))
+				for i in range(num):
+					get= raw_input("Note(NAME OCTAVE): ").split()
+					if (len(get) == 1):
+						get.append("4")
+					get[0] = transform(get[0])
+					n = get[0] + '-' + get[1]
+					NoteL.append(n)
+				time = int(input("Beats per measure(#/4): "))
+				writemusic(NoteL, time, key,raw_input("File Title: "))
 		choice = int(input("Transpose(0) or Write(1)? (-1 to exit) "))
