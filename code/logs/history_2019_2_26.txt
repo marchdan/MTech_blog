@@ -10,3 +10,45 @@ Tue Feb 26 10:25:33 2019
 Tue Feb 26 10:27:33 2019
 \header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \time 3/4 \key g \minor g4 a4 bes4 } { a4 bes4 c'4 } { bes4 c'4 d'4 } { c'4 d'4 ees'4 } }
 
+Tue Feb 26 10:47:57 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { c'4 d'4 e'4 f'4 } { g'4 a'4 b'4 c''4 } }
+
+Tue Feb 26 11:06:16 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { c'4 d'4 e'4 f'4 } { g'4 a'4 b'4 c''4 } }
+
+Tue Feb 26 11:08:15 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { c'4 d'4 e'4 f'4 } { g'4 a'4 b'4 c''4 } }
+
+Tue Feb 26 11:10:45 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { c'4 d'4 e'4 f'4 } { g'4 a'4 b'4 c''4 } }
+
+Tue Feb 26 11:12:15 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { c'4 d'4 e'4 f'4 } { g'4 a'4 b'4 c''4 } } { { c'4 d'4 e'4 f'4 } { g'4 a'4 b'4 c''4 } }
+
+Tue Feb 26 11:23:53 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \time 1/4 \key g \major g'4 } }
+
+Tue Feb 26 11:32:06 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
+Tue Feb 26 11:36:02 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { \key c \major d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
+Tue Feb 26 11:36:50 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
+Tue Feb 26 11:39:05 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
+Tue Feb 26 11:43:02 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
+Tue Feb 26 11:43:29 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
+Tue Feb 26 11:43:51 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
+Tue Feb 26 11:45:19 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 cis''4 } { d''4 cis''4 b'4 a'4 } { g'4 fis'4 e'4 d'4 } { d'4 g'4 b'4 d''4 } }
+
