@@ -1,0 +1,15 @@
+Tue Mar 12 10:14:36 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \time 2/4 \key d \major d'4 a'4 } }
+
+Tue Mar 12 10:15:46 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 b'4 } { a'4 g'4 e'4 cis'4 } { d'4 a'4 d''4 d'4 } }
+
+Tue Mar 12 10:22:09 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \major d'4 fis'4 a'4 b'4 } { a'4 g'4 e'4 cis'4 } { d'4 a'4 d''4 d'4 } }
+
+Tue Mar 12 10:22:45 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key d \minor d'4 f'4 a'4 bes'4 } { a'4 g'4 e'4 cis'4 } { d'4 a'4 d''4 d'4 } }
+
+Tue Mar 12 10:38:30 2019
+\header { title = "Composition" composer = "Daniel Ackermans" opus = "" } { { \key aes \major c'4 ees'4 d'4 des'4 } { fis4 aes4 g4 ees4 } }
+

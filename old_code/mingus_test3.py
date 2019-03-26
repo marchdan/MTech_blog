@@ -1,4 +1,3 @@
-
 from mingus.core import *
 from mingus.containers import *
 #from mingus.midi import *
@@ -89,11 +88,16 @@ if __name__ == "__main__":
 			time = int(input("Beats per measure(#/4): "))
 			num = int(input("Number of notes: "))
 			for i in range(num):
-				get= raw_input("Note(NAME OCTAVE): ").split()
+				get= raw_input("Note(NAME OCTAVE LENGTH): ").split()
 				if (len(get) == 1):
 					get.append("4")
+					get.append("q")
+				elif (len(get) == 2):
+					get.append("q")
 				get[0] = transform(get[0])
+				get[2] = get[2].lower()
 				n = get[0] + '-' + get[1]
+				nFull = Note(n).value
 				NoteL.append(n)
 			t = writemusic(NoteL, time, key, i)
 			c.add_track(t)
@@ -103,7 +107,7 @@ if __name__ == "__main__":
 
 		tr = localtime(None)
 		tS = struct_time(tr)
-		time_string = "%s_%s_%s" % (tS[0], tS[1], t[2])
+		time_string = "%s_%s_%s" % (tS[0], tS[1], tS[2])
 
 		outFile = raw_input("Outfile name: ")
 		pdfF = "pdfs/"+outFile+".pdf"
