@@ -14,15 +14,17 @@ if __name__ == "__main__":
 
 	inputs = sys.argv
 
+	top = "\\score {"
 
-	head = "\\header\n{\n"
-	head += '\ttitle = "{}"\n'.format(inputs[1].strip().rstrip('.txt'))
-	head += '\tsubtitle = "{}"\n'.format(time_string)
-	head += '\tcomposer = "Daniel Ackermans"\n'
-	head += '}\n'
+	bottom = "}"
 
 
-	data = "{\n"
+	head = "\t\\header\n\t{\n"
+	head += '\t\ttitle = "{}"\n'.format(inputs[1].strip().rstrip('.txt'))
+	head += '\t\tsubtitle = "{}"\n'.format(time_string)
+	head += '\t\tcomposer = "Daniel Ackermans"\n'
+	head += '\t}\n'
+
 	filename = "inputs/" + inputs[1].strip()
 
 	key = inputs[2].lower()
@@ -31,10 +33,20 @@ if __name__ == "__main__":
 	time = inputs[5]
 	tempo = int(inputs[6])
 
-	data += "\t\\key {} \\{}\n".format(key, modal)
-	data += '\t\\clef "{}"\n'.format(clef)
-	data += '\t\\time {}\n'.format(time)
-	data += '\t\\tempo {} = {}\n'.format(time[-1], tempo)
+	if(len(key) == 1):
+		keyNew = key[0]
+	else:
+		if(key[1] == 'b'):
+			keyNew = key[0] + 'es'
+		else:
+			keyNew = key[0] + 'is'
+
+	data = "\t\\new Staff {\n"
+		
+	data += "\t\t\\key {} \\{}\n".format(keyNew, modal)
+	data += '\t\t\\clef "{}"\n'.format(clef)
+	data += '\t\t\\time {}\n'.format(time)
+	data += '\t\t\\tempo {} = {}\n\t'.format(time[-1], tempo)
 
 	file = open(filename, 'r')
 	notes = []
@@ -76,11 +88,19 @@ if __name__ == "__main__":
 
 		data += (n+o+l)
 
-	data += '\n}'
+	data += '\n\t}'
+
+	layout = "\t\\layout { }"
+
+	midi = "\t\\midi { }"
 
 
 	#print(sys.argv)
+	print(top)
 	print(head)
 	print(data)	
+	print(layout)
+	print(midi)
+	print(bottom)
 
 
