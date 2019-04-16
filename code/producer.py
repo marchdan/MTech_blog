@@ -147,10 +147,11 @@ def convertKey(key):
 def start(notes):
 	ret = []
 	changed = False
-	num = 3
-	if(notes[0] > 'c'):
-		num += 1
-		
+	if(notes[0] >= 'c' and notes[0] <= 'f'):
+		num = 4
+		changed = True
+	else:
+		num = 3
 	ret.append(num)
 	if(not changed and notes[2] >= 'c'):
 		num += 1
@@ -159,7 +160,10 @@ def start(notes):
 	if(not changed and notes[4] >= 'c'):
 		num = 5
 	ret.append(num)
-	ret.append(num)
+	if(notes[0] >= 'c' and notes[0] <= 'f'):
+		ret.append(num+1)
+	else:
+		ret.append(num)
 	return ret
 
 
